@@ -1,10 +1,30 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# General
+*.log
+*.tmp
+*.swp
+*.swo
 
-### STS ###
+# Node modules
+/node_modules/
+
+# Environment files
+*.env
+
+# Build outputs
+/dist/
+/build/
+/target/
+
+# Maven Wrapper
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse
 .apt_generated
 .classpath
 .factorypath
@@ -13,21 +33,24 @@ target/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
+# Visual Studio Code
 .vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Frontend specific
+/frontend/node_modules/
+/frontend/build/
+
+# Backend specific
+/backend/target/
