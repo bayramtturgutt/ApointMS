@@ -1,0 +1,15 @@
+# Node modules
+frontend/node_modules/
+
+# Build output
+frontend/build/
+backend/target/
+
+# IDE files
+*.iml
+.idea/
+*.vscode/
+
+# Environment variables
+frontend/.env
+backend/application.properties
