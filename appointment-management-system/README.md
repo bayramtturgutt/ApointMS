@@ -1,4 +1,4 @@
-# Appointment Management System
+# Appointment Management System ***
 
 ## Project Structure
 
