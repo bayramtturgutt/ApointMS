@@ -3,16 +3,26 @@ package com.example.appointment.util;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import java.util.Date;
 
 @Component
 public class JwtUtils {
 
-    private final String secretKey = "your-secret-key"; // Change this to a secure key
+    @Value("${spring.security.jwt.secret-key}")
+    private String secretKey;
+
+    @Value("${spring.security.jwt.expiration-ms:3600000}")
+    private long expirationMs;
 
     public String generateToken(String username) {
+        Date now = new Date();
+        Date expiry = new Date(now.getTime() + expirationMs);
         return Jwts.builder()
                 .setSubject(username)
+                .setIssuedAt(now)
+                .setExpiration(expiry)
                 .signWith(SignatureAlgorithm.HS256, secretKey)
                 .compact();
     }
